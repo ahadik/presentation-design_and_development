@@ -9,3 +9,140 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.img {
+  &--small {
+    height: 80%;
+  }
+
+  &__no-padding {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+.reveal {
+
+  h1 {
+    line-height: 1.25em;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-weight: 700;
+    line-height: 1.25em;
+    -webkit-margin-after: .5em;
+  }
+
+  .slide {
+    &--full {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  a {
+    //color: white !important;
+  }
+
+  .link {
+    &__background {
+      &--image {
+        color: white !important;
+        text-shadow: 0px 0px 7px #000;
+      }
+    }
+  }
+
+  .text {
+    &__background {
+      &--image {
+        color: white;
+        text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+      }
+    }
+    &__position{
+      position: fixed;
+      &--top{
+        top: -400px;
+      }
+
+      &--bottom {
+        bottom : 0;
+      }
+
+      &--left {
+        max-width: 50%;
+        text-align: left;
+      }
+    }
+  }
+
+  .highlight {
+    background-color: #212121;
+  }
+
+  .sidenote {
+    font-weight: 100;
+    span {
+      font-size: 1em;
+    }
+  }
+
+  .group {
+    &--text {
+      display: block;
+      margin-top: 5%;
+    }
+
+    &--horizontal{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  @mixin advocate--text() {
+    & * {
+      font-family: "Din Pro", sans-serif;
+      color: white;
+    }
+  }
+
+  .advocate {
+    @include advocate--text();
+
+    &--title {
+      text-transform: uppercase;
+      font-weight: 100;
+    }
+  }
+
+  .portrait {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    &__image {
+      $dimension: 200px;
+      border-radius: 50%;
+      height: $dimension;
+      width: $dimension;
+      background-position: center center;
+      background-size: contain;
+      border: 4px white solid;
+      margin-bottom: 5%;
+
+      &--alex {
+        background-image: url('../imgs/alex.jpg');
+      }
+
+      &--josh {
+        background-image: url('../imgs/josh.jpg');
+      }
+    }
+  }
+}

@@ -67,6 +67,7 @@
 	}
 	
 	app.use(express.static(path.join(__dirname, 'public')));
+	app.use('/bower_components', express.static('bower_components'));
 	//app.set(path.join('views', __dirname, '/apps'));
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(bodyParser.json());
@@ -145,7 +146,7 @@
 	
 	module.exports = function (app, credentials) {
 	    var path = __webpack_require__(5);
-	    var __dirname = path.resolve(path.dirname());
+	    var __dirname = path.resolve(path.dirname('./'));
 	
 	    app.get('/', function (req, res) {
 	        res.sendFile(__dirname + '/public/index.html');

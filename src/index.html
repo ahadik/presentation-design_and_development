@@ -1,9 +1,323 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">
-		<script src="js/script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/../bower_components/reveal-js/css/reveal.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/reveal-js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/simple.css">
+    <script src="../bower_components/reveal-js/js/reveal.min.js"></script>
+    <script src="../bower_components/reveal-js/lib/js/head.min.js"></script>
+    <script src="js/script.js" charset="utf-8" async></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">
 	</head>
 	<body>
-		<h2>Hello World</h2>
+		<div class="reveal">
+        <div class="slides">
+          <section class="slide--full" data-background-image="imgs/alex-splash.jpg">
+            <h2 class="text__background--image text__position--top">howdy</h2>
+            <span class="text__position--bottom"><a class="link__background--image" href="mailto:alex@alexhadik.com">alex@alexhadik.com</a></span>
+          </section>
+          <section>
+            <section>
+              <img class="img--small" src="imgs/brown_crest.jpg" />
+            </section>
+            <section>
+              <img src="imgs/brown_comp_bio.jpg" />
+            </section>
+            <section>
+              <img src="imgs/bwxd.png" />
+              <img class="fragment" src="imgs/bwxd_old.jpg" />
+              <aside class="notes">I love the rebrand, but I'll always have a place in my heart for the color blindness test.</aside>
+            </section>
+            <section>
+              <img src="imgs/bdw.jpg" />
+            </section>
+            <section>
+              <img src="imgs/chris.jpg" />
+            </section>
+          </section>
+          <section>
+            <section data-background="#fff">
+              <img src="imgs/ibm.png" />
+              <aside class="notes">I spent the past year working at IBM as a front end developer and UX designer...</aside>
+            </section>
+            <section data-background="#252326">
+              <img src="imgs/ibm_reibus.jpg" />
+              <aside class="notes">Specifically, within IBM Design.</aside>
+            </section>
+            <section>
+              <img src="imgs/maelstrom.png" />
+            </section>
+            <section data-background-image="imgs/design_camp.jpeg"></section>
+            <section>
+              <img src="imgs/bluemix.png" />
+            </section>
+          </section>
+          <section data-background="#435464">
+              <img src="imgs/transcriptic_blue.svg">
+            </section>
+          <section>
+            <section data-background="#264A60">
+              <h1>Bringing Together Design and Engineering</h1>
+              <h2 class="sidenote">(IRL)</h2>
+            </section>
+            <section  data-background="#264A60">
+              <h2>How you (might) build things</h2>
+              <h2>now</h2>
+            </section>
+            <section  data-background="#264A60">
+              <h2>How you (might) build things</h2>
+              <h2>at a massive company</h2>
+            </section>
+            <section  data-background="#264A60">
+              <h2>How you (might) build things</h2>
+              <h2>at a small startup</h2>
+            </section>
+          </section>
+          <section>
+            <section data-background="#264A60">
+              <h1>Building Things Fast and Dirty</h1>
+            </section>
+            <section class="advocate" data-background="#EC5766">
+              <h1 class="advocate--title">Advocate</h1>
+            </section>
+            <section class="advocate" data-background="#EC5766">
+              <h2>The Team</h2>
+              <div class="group--horizontal">
+                <div class="portrait">
+                  <div class="portrait__image portrait__image--alex"></div>
+                  <h3>Alex Hadik</h3>
+                  <h4>Developer</h4>
+                </div>
+                <div  class="portrait">
+                  <div class="portrait__image portrait__image--josh"></div>
+                  <h3>Josh Shiau</h3>
+                  <h4>Designer</h4>
+                </div>
+              </div>
+            </section>
+            <section class="advocate advocate--black">
+              <img src="imgs/advocate_wireframes.png" />
+              <aside class="notes">
+                <p>Community marketplace for volunteers (web app on both desktop and mobile)</p>
+              </aside>
+            </section>
+            <section>
+              <img src="imgs/advocate_desktop.png" />
+              <aside class="notes">
+                <p>Community marketplace for volunteers (web app on both desktop and mobile)</p>
+              </aside>
+            </section>
+            <section>
+              <img src="imgs/i_have_no_idea.jpg" />
+            </section>
+            <section>
+              <img src="imgs/workflow.jpg" />
+              <aside class="notes">
+                <ul>
+                  <li>For the most part it was this - the two of us working in my basement with Josh Instagramming out photos of our encryption keys</li>
+                  <li>It was a 1:1 relationship - a single designer putting together compositions on the fly and a single engineer building them right then and there. We did about 80% of our design in Illustrator and then the final 20% in the browser - live editing CSS and such</li>
+                  <li>I would say it's not uncommon for projects of any scale to have an origin story like this; someone with an engineering or design background has an idea, and seeks out someone with a complimentary skill set to help them build it.</li>
+                </ul>
+              </aside>
+            </section>
+            <section data-background="#264A60">
+                <h2 class="fragment">Idea Validation</h2>
+                <h2 class="fragment">A Terrible Product</h2>
+              <aside class="notes">
+                <ul>
+                  <li>-- And truth-be-told this approach often results in two things</li>
+                  <ul>
+                    <li>--- Idea validation - proof that this idea holds water and is worth investing in</li>
+                    <li>--- A terrible product</li>
+                  </ul>
+                </ul>
+              </aside>
+            </section>
+            <section>
+              <pre><code data-trim data-noescape>
+//Get all organizations by their internal ID
+organizations.find({orgID : {$in : orgIDs}}).toArray(function(err, orgArray){
+<mark class="highlight">/*THERE'S A GOOD CHANCE SOMETHING MIGHT FUCK UP HERE*/</mark>
+var index = 0;
+for (orgEntry in orgArray){
+  var orgID = Object.keys(account.accounts)[index];
+  data.user.accounts.push({
+    name : orgArray[orgEntry].orgname,
+    profile : orgArray[orgEntry].profile,
+    id : orgID
+  });
+  index++;
+}
+
+...
+
+});
+              </code></pre>
+              <aside class="notes">
+                <ul>
+                  <li>you're going to have code like this</li>
+                </ul>
+              </aside>
+            </section>
+            <section data-background-image="imgs/designs.png">
+              <aside class="notes">
+                <ul>
+                  <li> and designs like this - it works but all it does is validate.</li>
+                </ul>
+              </aside>
+            </section>
+            <section data-background-image="imgs/protips.jpg" class="slide--full">
+              <h1 class="text__background--image">Pro Tips</h1>
+            </section>
+            <section data-background="#264A60">
+              <span class="fragment group--text">
+                <h2>Just Make it Work</h2>
+                <span class="sidenote">(you're going to throw it all out anyways)</span>
+              </span>
+              <span class="fragment group--text">
+                <h2>Keep Designs Fluid</h2>
+                <span class="sidenote">(you'll throw all these out too)</span>
+              </span>
+              <aside class="notes">
+                <ul>
+                  <li>At this point, you need to do the least amount of work to prove a point.</li>
+                  <li>Don't saddle yourself with design overhead.</li>
+                  <li>After you validate, it's time to scale...</li>
+                </ul>
+              </aside>
+            </section>
+          </section>
+          <section>
+            <section data-background="#264A60">
+              <h1>Building Things at Massive Scale</h1>
+            </section>
+            <section data-background="#ddf1f0">
+              <h1 style="color: #264A60">IBM Bluemix</h1>
+              <img class="img__no-padding" src="imgs/work-bluemix.jpg">
+              <aside class="notes">
+                <ul>
+                  <li>Bluemix is AWS but for large scale enterprise clients (American Airlines, Hospital Networks, etc.)</li>
+                  <li>IBM's hallmark Cloud offering</li>
+                </ul>
+              </aside>
+            </section>
+            <section data-background="#264A60">
+              <h2>The Team</h2>
+              <div class="group--horizontal">
+                <div class="portrait">
+                  <h3>Designers</h3>
+                  <h4>100+</h4>
+                </div>
+                <div  class="portrait">
+                  <h3>Developers</h3>
+                  <h4>1000+</h4>
+                </div>
+                <div  class="portrait">
+                  <h3>Sales, Marketing, etc.</h3>
+                  <h4>500+</h4>
+                </div>
+              </div>
+              <aside class="notes">
+                <ul>
+                  <li>IBM is of course massive (~400,000 employees) and the Bluemix team alone is pretty big (estimating it to be in the thousands)</li>
+                  <li>We're not in the process of validating, we are in the process of executing at scale. As a result, our team has to work in lockstep, with many teams shipping different aspects of the product that integrate seamlessly, provide a consistent user experience, and are extraordinarily stable and secure.</li>
+                </ul>
+              </aside>
+            </section>
+            <section data-background="#264A60">
+              <h2>The Workflow</h2>
+            </section>
+            <section data-background-image="imgs/desk.jpg">
+              <aside class="notes">
+                <p>This is a N:M relationship. The design team alone is over 100 people, and we're interfacing with hundreds more engineers, product managers, etc.</p>
+              </aside>
+            </section>
+            <section data-background="#264A60">
+              <h1>A Single Source of (Design) Truth</h1>
+              <aside class="notes"><p>Bluemix has approached this challenge by asserting a single source of truth for design, essentially shipping Bluemix designs as a single product that engineering teams "subscribe" to. So we can ship new versions of the interface just like iOS ships new versions, provide release notes, offer backwards compatibility etc. We can ship without telling our engineering teams and their work updates automatically (well its supposed to)</p></aside>
+            </section>
+            <section data-background-image="imgs/tools.jpg" class="slide--full">
+                <h1 class="text__position text__position--top text__position--left">Our Product</h1>
+              <aside class="notes">
+                <ul>
+                  <li>Prototyping and design assets (Sketch Files) distributed to design teams with the mandate that new features and products be created and assembled from those assets. If something is missing, teams are asked to design a solution and present it to the design systems team so it can be integrated into the design system. Then, one team's solution can be shared immediately with all other teams.</li>
+                  <li>A set of styles and self invoking Javascript classes exposed through a well defined API, along with defined HTML structures for components. Engineers subscribe to this API, which is valid only when the proper HTML structure is used, to render their work visually. They only need to take care of wiring things together, not building interactions.</li>
+                  <li>When the time comes, the design team releases a new version of the design system, documents breaking changes, and requests that engineering teams take the time to upgrade the dependency to the new version. They'll be prevented from deploying their work until they have upgraded the dependency.</li>
+                </ul>
+              </aside>
+            </section>
+            <section data-background-image="imgs/protips.jpg">
+              <h1>Pro Tips</h1>
+            </section>
+            <section data-background="#264A60">
+              <span class="fragment group--text">
+                <h2>Separate Concerns</h2>
+                <span class="sidenote">(keep your UI modular)</span>
+              </span>
+              <span class="fragment group--text">
+                <h2>Separate Your App</h2>
+                <span class="sidenote">(the UI and the app are two different things)</span>
+              </span>
+              <span class="fragment group--text">
+                <h2>Acknowledge the Overhead</h2>
+                <span class="sidenote">(this is going to suck your resources dry)</span>
+              </span>
+              <aside class="notes">
+                <ul>
+                  <li>Design your UI as a set of composable parts that each contain their own logic and can operate independtly of each other.</li>
+                  <li>Ship your UI as a product itself, with its own releases, and API</li>
+                  <li>This isn't a small process, so be aware of the amount of direct effort it will require</li>
+                </ul>
+              </aside>
+            </section>
+          </section>
+          <section>
+            <section data-background="#264A60">
+              <h1>Building Things Fast and With Intent</h1>
+            </section>
+            <section data-background="#435464">
+              <img src="imgs/transcriptic_blue.svg">
+            </section>
+            <section data-background-image="imgs/workcell.jpg"></section>
+            <section data-background="#264A60">
+              <h2>The Team</h2>
+              <div class="group--horizontal">
+                <div class="portrait">
+                  <h3>Designers</h3>
+                  <h4>1</h4>
+                </div>
+                <div  class="portrait">
+                  <h3>Developers</h3>
+                  <h4>~10</h4>
+                </div>
+                <div  class="portrait">
+                  <h3>Biologists</h3>
+                  <h4>~10</h4>
+                </div>
+                <div  class="portrait">
+                  <h3>Engineers</h3>
+                  <h4>~10</h4>
+                </div>
+              </div>
+              <aside class="notes">
+                <p>About 30 people - 1/3 biology, 1/3 mechanical/electrical engineering, 1/3 software engineering, and me - the designer</p>
+              </aside>
+            </section>
+            <section data-background-image="imgs/designer-desk.jpg">
+              <aside class="notes">
+                <ul>
+                  <li>So we have kinda a 1:N relationship, where there used to be a 0:N relationship, meaning design decisions got made ad hoc.</li>
+                  <li>I'm in the process of consolidating all of that into some semblance of a design system.</li>
+                  <li>The goal isn't to get to the point of bluemix, but at the very least to a well defined CSS/Sass library with clear understanding on how to use it and contribute to it communicated to our engineers.</li>
+                  <li>The end goal is to get the engineering team to a point where they can put together designs themselves if they're just using pre-existing components. They can just draw from the design system as necessary.</li>
+                </ul>
+              </aside>
+            </section>
+          </section>
+          <section data-background="#264A60">
+            <h1>Thank You!</h1>
+            <span class="text__position--bottom"><a class="link__background--image" href="mailto:alex@alexhadik.com">alex@alexhadik.com</a></span>
+          </section>
+        </div>
+    </div>
 	</body>
 </html>

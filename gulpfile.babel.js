@@ -32,7 +32,9 @@ var dirs = {
       '!src/**/*.min.js'
     ],
     'client': {
-      'main':'./src/js/script.js',
+      'main': './src/js/script.js',
+      //'main': ['./src/js/script.js','./bower_components/reveal-js/js/reveal.min.js', './bower_components/reveal-js/lib/js/head.min.js'],
+      //'main' : './bower_components/reveal-js/js/reveal.min.js',
       'watch':'./src/**/*.js'
     },
     'server': {
